@@ -1,7 +1,11 @@
 let passwordGeneratorBtn = document.getElementById("password-generator-btn")
 let passwordEl = document.getElementById("password-el")
+let passwordEl1 = document.getElementById("password-el1")
 const passwordContent = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
 let passwordLength = 12
+passwordEl.style.display = "none"
+passwordEl1.style.display = "none"
+
 
 
 function generatePassword() {
@@ -12,7 +16,15 @@ function generatePassword() {
     }
 
     console.log(password)
-    passwordEl.textContent = password
 
-    return 
+    return password
+}
+
+function renderPassword() {
+    passwordEl.style.display = "block"
+    passwordEl1.style.display = "block"
+    let password1 = generatePassword()
+    let password2 = generatePassword()
+    passwordEl.textContent = password1
+    passwordEl1.textContent = password2
 }
