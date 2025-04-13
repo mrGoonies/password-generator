@@ -7,7 +7,10 @@ passwordEl.style.display = "none"
 passwordEl1.style.display = "none"
 
 
-
+/**
+ * Función genera una contraseña aleatoria de longitud 12 utilizando el array passwordContent.
+ * @returns {string} retorna una contraseña aleatoria.
+ */
 function generatePassword() {
     let password = ""
     for (let i=0; i<passwordLength; i++) {
@@ -20,6 +23,11 @@ function generatePassword() {
     return password
 }
 
+/**
+ * Renderiza la contraseña generada en el DOM.
+ * Asigna la contraseña generada a los elementos passwordEl y passwordEl1.
+ * @returns {void}
+ */
 function renderPassword() {
     passwordEl.style.display = "block"
     passwordEl1.style.display = "block"
@@ -27,4 +35,6 @@ function renderPassword() {
     let password2 = generatePassword()
     passwordEl.textContent = password1
     passwordEl1.textContent = password2
+
+    return
 }
